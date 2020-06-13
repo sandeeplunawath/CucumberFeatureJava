@@ -26,13 +26,11 @@ public class TestRunner {
 
 	    @Test(dataProvider = "features")    
 	    public void feature(PickleEventWrapper eventwrapper,CucumberFeatureWrapper cucumberFeature) throws Throwable {
-	    	//testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
-	    	testNGCucumberRunner.runScenario(eventwrapper.getPickleEvent());
+	   	    	testNGCucumberRunner.runScenario(eventwrapper.getPickleEvent());
 	    }
 	    
 	    @DataProvider//(parallel=true)
 	    public Object[][] features() {
-	       // return testNGCucumberRunner.provideFeatures();    	
 	    	 return testNGCucumberRunner.provideScenarios();
 	    }
 	    
